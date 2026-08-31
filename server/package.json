@@ -1,0 +1,29 @@
+{
+  "name": "billwise-ai-server",
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "node src/migrate.js",
+    "reminders:run": "node src/run-reminders.js",
+    "db:import-json": "node src/import-json.js"
+  },
+  "dependencies": {
+    "@polar-sh/express": "0.6.6",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.6",
+    "pg": "^8.16.3",
+    "plaid": "46.0.0",
+    "stripe": "22.6.0",
+    "zod": "^4.1.5"
+  }
+}

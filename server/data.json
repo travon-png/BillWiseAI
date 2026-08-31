@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "1788129361271_beknp3j",
+      "name": "travon",
+      "email": "travonmackey28@gmail.com",
+      "passwordHash": "$2b$12$/5cUyenqE7CzWpjgB0Fre.Cj94dkykdhp70Y.YUadB3w8Hj8/2dDG",
+      "plan": "free",
+      "createdAt": "2026-08-30T22:36:01.733Z"
+    }
+  ],
+  "bills": [],
+  "incomes": []
+}

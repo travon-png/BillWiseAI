@@ -1,0 +1,76 @@
+BillWise AI — Premium Growth Update
+===================================
+
+This patch updates your EXISTING:
+~/Downloads/BillWiseAI
+
+It adds:
+- Plus 30-day cash-flow forecast
+- Pro/Family 90-day forecast
+- Smart bill increase watch
+- Savings goals
+- Pro monthly money reports
+- Family household with up to 5 members
+- Family invitations
+- Shared household expense board
+- Integration status center
+- Test reminder-email button
+- Stronger pricing/upgrade screens
+- Better paid-value dashboard teaser
+
+It keeps:
+- your existing Railway PostgreSQL connection
+- your current .env
+- existing users and bills
+- Stripe / Polar billing adapters
+- Plaid read-only bank connection
+- reminder worker
+
+1. Back up the current project:
+
+cd ~/Downloads
+cp -R BillWiseAI BillWiseAI-backup-before-premium-update
+
+2. Merge this update folder:
+
+cp -R BillWiseAI-PremiumGrowthUpdate/BillWiseAI/. BillWiseAI/
+
+3. Apply the new PostgreSQL migration:
+
+cd ~/Downloads/BillWiseAI/server
+npm run db:migrate
+
+You should see:
+Running 001_init.sql...
+Running 002_premium_growth.sql...
+Database migrations complete.
+
+4. Restart backend:
+
+npm install
+npm run dev
+
+5. Restart frontend in a second Terminal:
+
+cd ~/Downloads/BillWiseAI/client
+npm install
+npm run dev
+
+Open:
+http://localhost:5173
+
+Testing paid features while BILLING_PROVIDER=demo
+------------------------------------------------
+Go to Plans and choose Plus / Pro / Family.
+
+Demo billing changes the PostgreSQL plan without charging money, so you can test:
+- Plus forecast + goals
+- Pro AI + banks + reports
+- Family shared household
+
+Real provider credentials still required for:
+- real reminder email delivery -> SMTP values in server/.env
+- real checkout -> Stripe or Polar values in server/.env
+- real supported bank connections -> Plaid values in server/.env
+
+The Integration Center inside the app now shows which of those are actually configured.
